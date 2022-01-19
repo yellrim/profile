@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./img/pv.png" type="image/x-icon">
+    <script>
+        window.onload=function(){
+            let btnNav = document.getElementById('btn-nav');
+            btnNav.addEventListener('click',function(){
+            let _header =document.querySelector('.header');
+            let _nav = document.querySelector('.nav');
+            _header.classList.toggle('show-nav');
+            _nav.classList.toggle('show-nav');
+        });
+        }
+    </script>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+         :root{
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
+         }
+         *{box-sizing:border-box;margin:0;padding:0;}
+        img{width:100%;vertical-align:top;}
+        .clearfix::after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+        .wrap{
+            width: 360px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        /* header */
+        .header .container{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            height: 49px;
+            border-bottom: 1px solid #eeeeee;
+            color: #666666;
+        }
+        .left span{
+            font-size: 18px;
+            line-height: 18px;
+            margin: 17px 6px 17px 17px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        h1{
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 49px;
+            cursor: pointer;
+        }
+
+        .right span{
+            font-size: 18px;
+            line-height: 18px;
+            margin: 17px 17px 17px 6px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        /* nav */
+
+        .nav{
+            position:absolute;
+            left:0;
+            right:0;
+            top:100%;
+            height:0;
+            overflow:hidden;
+            background-color:rgba(0,0,0,0.4);    
+            transition:0.3s;
+        }
+        .nav.show-nav{
+            height:90px;
+            background-color: #cccccc;
+        }
+
+        .nav-list{
+            display:flex;
+            flex-flow:row wrap;
+            border-top:1px solid #fff;
+            border-bottom:1px solid #fff;  
+            font-weight:300;   
+            font-size:18px;
+            color: white;      
+        }
+        .nav-list li{
+            width:50%;
+            padding:10px 0;
+        }
+        .bd-bt{
+            border-bottom:1px solid #fff;  
+        }
+        .bd-rt{
+            border-right:1px solid #fff;  
+        }
+        .nav-list a{            
+            padding-left:16px;
+        }
+
+        /* sec01 */
+        .sec01 img{
+            width: 140px;
+            height: 140px;
+            display:block;
+            margin: auto;
+            margin-top:40px;
+            margin-bottom: 15px;
+        }
+
+        .sec01 h2,h3,h4{
+            text-align: center;
+        }
+        .sec01 h4{
+            font-size: 18px;
+            color: #cccccc;
+        }
+        .sec01 h2{
+            font-size: 24px;
+            color: #666666;
+        }
+        .sec01 h3{
+            font-size: 18px;
+            color: #888888;
+        }
+
+        /* sec02 */
+        .sec02{
+            color: #666666;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            text-align: center;
+            margin: 30px;
+        }
+        .sec02 span{
+            font-size: 14px;
+            color: black;
+        }
+        .sec02 p{
+            font-size: 10px;
+            color: #666666
+        }
+        .sec02 span:hover {
+            font-size: 15px;
+        }
+        /* article */
+        .art{
+            width:100%;
+            margin:0 auto;
+        }
+        .img-box{
+            width:88px;
+            margin-right:2px;
+            float:left;
+            overflow:hidden;
+            cursor: pointer;
+        }
+        .img-box img:hover{
+            transform:translateX(15px);
+        }
+        .pht01,.pht05{
+            margin-left: 0;
+        }
+        .pht04,.pht08{
+            margin-right:0;
+        }
+        .pht01,.pht02,.pht03,.pht04{
+            margin-bottom:2px;
+        }
+
+        /* footer */
+        .footer{
+            position: fixed;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #f0f0f0;
+            width: 360px;
+            height: 44px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 44px;
+        }
+        .footer span{
+            display: inline-block;
+            margin-right:70px;
+            color: #cccccc;
+            cursor: pointer;
+        }
+        .footer span:first-child{
+            margin-left: 40px;
+        }
+        .footer span:last-child{
+            margin-right: 0;
+        }
+        .footer span:hover{
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <section class="left">
+                    <span class="btn-nav" id="btn-nav"><i class="fas fa-bars"></i>
+                        <nav class="nav">
+                            <ul class="nav-list">
+                                <li class="bd-bt bd-rt">
+                                    <a href="#">                                   
+                                        <i class="fas fa-cog"></i> 설정
+                                    </a>
+                                </li>
+                                <li class="bd-bt">
+                                    <a href="#">
+                                        <i class="fas fa-bell"></i> 내 활동
+                                    </a>
+                                </li>
+                                <li class="bd-rt">
+                                    <a href="#">
+                                        <i class="fas fa-users"></i> 친한 친구
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-bookmark"></i> 보관
+                                    </a>
+                                </li>
+                            </ul>
+                           </nav>
+                    </span>
+                    <span><i class="fas fa-search"></i></span>
+                </section>
+                <section class="center">
+                    <h1>Profile</h1>
+                </section>
+                <section class="right">
+                    <span><i class="fas fa-user-alt"></i></span>
+                    <span><i class="fas fa-comments"></i></span>
+                </section>
+            </div>
+            <!-- <div class="btn-nav" id="btn-nav">
+                <nav class="nav">
+                 <ul class="nav-list">
+                     <li class="bd-bt bd-rt">
+                         <a href="#">                                   
+                             <i class="fas fa-cog"></i> 설정
+                         </a>
+                     </li>
+                     <li class="bd-bt">
+                         <a href="#">
+                             <i class="fas fa-bell"></i> 내 활동
+                         </a>
+                     </li>
+                     <li class="bd-rt">
+                         <a href="#">
+                             <i class="fas fa-users"></i> 친한 친구
+                         </a>
+                     </li>
+                     <li>
+                         <a href="#">
+                             <i class="fas fa-bookmark"></i> 보관
+                         </a>
+                     </li>
+                 </ul>
+                </nav>
+            </div>  -->
+        </header>
+        <section class="sec sec01">
+            <img src="./img/main.jpg" alt="쌍둥이 이미지">
+            <h4>Complate</h4>
+            <br>
+            <h2>Hong Gil-dong</h2>
+            <h3><i class="fas fa-map-marker-alt"></i>seoul, joongu</h3>
+        </section>
+        <section class="sec sec02">
+            <div class="wer">
+                <span>1,120</span><p>팔로워</p>
+            </div>
+            <div class="wing">
+                <span>1,120</span><p>팔로워</p>
+            </div>
+            <div class="photo">
+            <span>678</span><p>사진첩</p>
+            </div>
+        </section>
+        <article class="art clearfix">
+            <div class="img-box pht01"><img src="./img/1-2.jpg" alt="귀여운 아기 이미지1"></div>
+            <div class="img-box pht02"><img src="./img/2-2.jpg" alt="귀여운 아기 이미지2"></div>
+            <div class="img-box pht03"><img src="./img/3-3.jpg" alt="귀여운 아기 이미지3"></div>
+            <div class="img-box pht04"><img src="./img/4-4.jpg" alt="귀여운 아기 이미지4"></div>
+            <div class="img-box pht05"><img src="./img/5-5.jpg" alt="귀여운 아기 이미지5"></div>
+            <div class="img-box pht06"><img src="./img/6-6.jpg" alt="귀여운 아기 이미지6"></div>
+            <div class="img-box pht07"><img src="./img/7-7.jpg" alt="귀여운 아기 이미지7"></div>
+            <div class="img-box pht08"><img src="./img/8-8.jpg" alt="귀여운 아기 이미지8"></div>
+        </article>
+        <footer class="footer">
+            <span><i class="fas fa-home"></i></span>
+            <span><i class="fas fa-handshake"></i></span>
+            <span><i class="fas fa-paper-plane"></i></span>
+            <span><i class="fas fa-map-marked-alt"></i></span>
+        </footer>
+    </div>
+</body>
+</html>
